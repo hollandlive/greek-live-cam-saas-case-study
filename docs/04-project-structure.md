@@ -22,51 +22,45 @@ The goal is not just to make it work — but to make it sustainable.
 
 The project uses Next.js App Router with a layered structure:
 
+````
+
+```
 greek-live-cam-app
 │
 ├── app/
-│ ├── greece/
-│ │ ├── [city]/
-│ │ │ ├── [slug]/
-│ │ │ │ └── page.tsx
-│ │ │ └── page.tsx
-│ │ └── page.tsx
-│ │
-│ ├── api/
-│ │ └── cameras/
-│ │ └── route.ts
-│ │
-│ └── layout.tsx
+│   ├── greece/
+│   │   ├── [city]/
+│   │   │   ├── [slug]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   │
+│   ├── api/
+│   │   └── cameras/
+│   │       └── route.ts
+│   │
+│   └── layout.tsx
 │
 ├── components/
-│ ├── CameraCard.tsx
-│ ├── CameraPlayer.tsx
-│ ├── CategoryFilter.tsx
-│ └── Navbar.tsx
+│   ├── CameraCard.tsx
+│   ├── CameraPlayer.tsx
+│   ├── CategoryFilter.tsx
+│   └── Navbar.tsx
 │
 ├── lib/
-│ ├── db.ts
-│ ├── fetchers.ts
-│ └── utils.ts
+│   ├── db.ts
+│   ├── fetchers.ts
+│   └── utils.ts
 │
 ├── types/
-│ └── camera.ts
+│   └── camera.ts
 │
 ├── prisma/
-│ └── schema.prisma
+│   └── schema.prisma
 │
 └── styles/
-└── globals.css
-
-This structure separates:
-
-- Routing layer
-- UI layer
-- Data access layer
-- Type definitions
-- Database schema
-
----
+    └── globals.css
+```
 
 ## 4.3 The `/app` Directory (Routing Layer)
 
@@ -115,7 +109,7 @@ export async function GET() {
   const cameras = await getAllCameras();
   return NextResponse.json(cameras);
 }
-```
+````
 
 Design Principle
 
@@ -140,27 +134,27 @@ Example:
 
 ```ts
 type CameraCardProps = {
-title: string
-city: string
-thumbnail: string
+  title: string
+  city: string
+  thumbnail: string
 }
 
 export default function CameraCard({
-title,
-city,
-thumbnail
+  title,
+  city,
+  thumbnail
 }: CameraCardProps) {
-return (
-<div className="card">
-<img src={thumbnail} alt={title} />
-<h3>{title}</h3>
-<p>{city}</p>
-</div>
-)
+  return (
+    <div className="card">
+      <img src={thumbnail} alt={title} />
+      <h3>{title}</h3>
+      <p>{city}</p>
+    </div>
+  )
 }
 ```
 
-Key Rules
+### Key Rules
 
 Components do not directly query the database
 
@@ -231,7 +225,8 @@ Reduced runtime errors
 
 Better developer experience
 
-4.8 Separation of Concerns Diagram
+## 4.8 Separation of Concerns Diagram
+
 User
 ↓
 Routing Layer (/app)
@@ -273,7 +268,7 @@ Global state misuse
 
 Early discipline prevents later refactoring crises.
 
-##4.11 Structure Summary
+## 4.11 Structure Summary
 
 The folder architecture is designed to:
 
