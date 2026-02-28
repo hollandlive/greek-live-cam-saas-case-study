@@ -239,6 +239,7 @@ App --> AD[Ad Network]
 - Edge CDN via Vercel
 
 ![Deployment Architecture](../assets/diagram-1.png)
+<img src="../assets/diagram-1.png" width="700" />
 
 ### Why Vercel?
 
