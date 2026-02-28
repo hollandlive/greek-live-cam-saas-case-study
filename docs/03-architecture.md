@@ -251,7 +251,7 @@ Minimal DevOps configuration
 
 This setup allows fast iteration without infrastructure complexity.
 
-### 3.8 Caching Strategy
+## 3.8 Caching Strategy
 
 To reduce database pressure and improve performance:
 
@@ -265,7 +265,7 @@ Lazy loading for embedded players
 
 YouTube streams are not hosted internally, which eliminates bandwidth costs.
 
-### 3.9 Legal & Streaming Constraints
+## 3.9 Legal & Streaming Constraints
 
 The MVP explicitly avoids:
 
@@ -287,7 +287,7 @@ Legal exposure
 
 CDN streaming expenses
 
-### 3.10 Scalability Roadmap
+## 3.10 Scalability Roadmap
 
 Phase 1 — Greece
 Phase 2 — Mediterranean Expansion
@@ -304,7 +304,7 @@ Infrastructure tuning
 
 No architectural redesign is necessary.
 
-### 3.11 Architecture Summary
+## 3.11 Architecture Summary
 
 The system architecture prioritizes:
 
